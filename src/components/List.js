@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 import { Container, Card, CardTitle, CardText , Title} from "./ListStyles";
+import MailIcon from '@material-ui/icons/Mail';
+import PhoneIcon from '@material-ui/icons/Phone';
+import RoomIcon from '@material-ui/icons/Room';
+import BusinessIcon from '@material-ui/icons/Business';
 
 class List extends Component {
     state = {
@@ -24,10 +28,10 @@ class List extends Component {
                     {this.state.users.map(item => (
                         <Card key={item.id}>
                             <CardTitle>{item.name}</CardTitle>
-                            <CardText> Email: {item.email}</CardText>
-                            <CardText> Telefone: {item.phone}</CardText>
-                            <CardText> Cidade: {item.address.city}</CardText>
-                            <CardText> Companhia: {item.company.name}</CardText>
+                            <CardText><MailIcon/> {item.email}</CardText>
+                            <CardText><PhoneIcon/> {item.phone}</CardText>
+                            <CardText><RoomIcon/> {item.address.city}</CardText>
+                            <CardText><BusinessIcon/> {item.company.name}</CardText>
                         </Card>
                     ))}
                 </Container>
