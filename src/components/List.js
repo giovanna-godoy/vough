@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Container, Card, CardTitle, CardText , Title} from "./ListStyles";
 
 class List extends Component {
     state = {
@@ -17,16 +18,20 @@ class List extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Lista de Usuários</h1>
-                <ul>
+            <section>
+                <Title>Lista de Usuários</Title>
+                <Container>
                     {this.state.users.map(item => (
-                        <li key={item.id}>
-                            <p>{item.name}</p>
-                        </li>
+                        <Card key={item.id}>
+                            <CardTitle>{item.name}</CardTitle>
+                            <CardText> Email: {item.email}</CardText>
+                            <CardText> Telefone: {item.phone}</CardText>
+                            <CardText> Cidade: {item.address.city}</CardText>
+                            <CardText> Companhia: {item.company.name}</CardText>
+                        </Card>
                     ))}
-                </ul>
-            </div>
+                </Container>
+            </section>
         );
     }
 }
